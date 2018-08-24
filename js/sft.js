@@ -108,5 +108,55 @@ setTimeout(() => { // clear in 5000ms (5 sec)
 $(document).ready(function() {
   $('.filter-2 h3').click();
   finderApp.tabs.open('#filters');
+  
+  var layerChoices = new nyc.Choice({
+    target: $('<div></div>'),
+    choices: [
+      {name: 'layer', label: 'None', value: 'none', checked: true},
+      {name: 'layer', label: 'Sandy inundation zone', value: 'innundation'}
+    ],
+    radio: true
+  });
+
+  var layerCollapsible = new nyc.Collapsible({
+    target: $('<div></div>'),
+    title: 'Layers',
+    content: layerChoices.getContainer()
+  });
+
+  $('#filters').append(layerCollapsible.getContainer());
+
+  layerChoices.on('change', function() {
+    for (var layer in extraLayers) {
+      extraLayers[layer].setVisible(false);
+    }
+    var chosen = layerChoices.val()[0].value
+    extraLayers[chosen].setVisible(true);
+  });
 });
 
+finderApp.layer.setZIndex(1000)
+
+var inundationLayer = new ol.layer.Tile({
+  zIndex: 0,
+  visible: false,
+  source: new ol.source.CartoDB({
+    account: 'nycomb-admin',
+    config: {
+      layers: [{
+        type: 'cartodb',
+        options: {
+          cartocss_version: '2.1.1',
+          cartocss: '#layer{polygon-fill:#826DBA;polygon-opacity:0.5;::outline{line-color:#FFFFFF;line-width:1;line-opacity:0.5;}}',
+          sql: 'select * from sandy_inundation_zone'
+        }
+      }]
+    }
+  })
+});
+
+finderApp.map.addLayer(inundationLayer);
+
+var extraLayers = {
+  innundation: inundationLayer
+};
