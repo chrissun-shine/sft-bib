@@ -124,7 +124,8 @@ $(document).ready(function() {
   var layerCollapsible = new nyc.Collapsible({
     target: $('<div></div>'),
     title: 'Additional Layers',
-    content: layerChoices.getContainer()
+    content: layerChoices.getContainer(),
+    collapsed: true
   });
 
   $('#filters').append(layerCollapsible.getContainer());
