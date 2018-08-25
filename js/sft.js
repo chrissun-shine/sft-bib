@@ -1,5 +1,6 @@
 var sql = 'SELECT ' +
   'ST_AsText(the_geom_webmercator) as wkt_geom,' +
+  'mapping_id as id,' +
   'grant_name as grt,' +
   'funding_source as fnd,' +
   'project_category as cat,' + 
@@ -113,14 +114,16 @@ $(document).ready(function() {
     target: $('<div></div>'),
     choices: [
       {name: 'layer', label: 'None', value: 'none', checked: true},
-      {name: 'layer', label: 'Sandy inundation zone', value: 'innundation'}
+      {name: 'layer', label: 'Sandy Inundation Zone', value: 'inundation'},
+      {name: 'layer', label: 'City Council District', value: 'council'},
+      {name: 'layer', label: 'Zip Code', value: 'zipcode'},
     ],
     radio: true
   });
 
   var layerCollapsible = new nyc.Collapsible({
     target: $('<div></div>'),
-    title: 'Layers',
+    title: 'Additional Layers',
     content: layerChoices.getContainer()
   });
 
@@ -147,7 +150,7 @@ var inundationLayer = new ol.layer.Tile({
         type: 'cartodb',
         options: {
           cartocss_version: '2.1.1',
-          cartocss: '#layer{polygon-fill:#826DBA;polygon-opacity:0.5;::outline{line-color:#FFFFFF;line-width:1;line-opacity:0.5;}}',
+          cartocss: '#layer{polygon-fill:#627FE0;polygon-opacity:0.8;::outline{line-color:#FFFFFF;line-width:1;line-opacity:0.5;}}',
           sql: 'select * from sandy_inundation_zone'
         }
       }]
@@ -157,6 +160,46 @@ var inundationLayer = new ol.layer.Tile({
 
 finderApp.map.addLayer(inundationLayer);
 
+var councilLayer = new ol.layer.Tile({
+  zIndex: 0,
+  visible: false,
+  source: new ol.source.CartoDB({
+    account: 'nycomb-admin',
+    config: {
+      layers: [{
+        type: 'cartodb',
+        options: {
+          cartocss_version: '2.1.1',
+          cartocss: '#layer{polygon-fill:#000;polygon-opacity:0.5;::outline{line-color:#FFFFFF;line-width:2;line-opacity:0.5;}}',
+          sql: 'select * from council_boundaries'
+        }
+      }]
+    }
+  })
+});
+finderApp.map.addLayer(councilLayer);
+
+var zipcodeLayer = new ol.layer.Tile({
+  zIndex: 0,
+  visible: false,
+  source: new ol.source.CartoDB({
+    account: 'nycomb-admin',
+    config: {
+      layers: [{
+        type: 'cartodb',
+        options: {
+          cartocss_version: '2.1.1',
+          cartocss: '#layer{polygon-fill:#000;polygon-opacity:0.5;::outline{line-color:#FFFFFF;line-width:2;line-opacity:0.5;}}',
+          sql: 'select * from zipcode_boundaries'
+        }
+      }]
+    }
+  })
+});
+finderApp.map.addLayer(zipcodeLayer);
+
 var extraLayers = {
-  innundation: inundationLayer
+  inundation: inundationLayer,
+  council: councilLayer,
+  zipcode: zipcodeLayer
 };
