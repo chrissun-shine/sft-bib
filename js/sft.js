@@ -101,9 +101,9 @@ if (highlitedGrantSource.getFeatures().length) {
   highlitedGrantSource.clear();
 }
 highlitedGrantSource.addFeatures(featuresByGrant[grant]);
-setTimeout(() => { // clear in 5000ms (5 sec)
+setTimeout(() => { // clear in 20000ms (10 sec)
   highlitedGrantSource.clear();
-}, 5000);
+}, 20000);
 });
 
 $(document).ready(function() {
@@ -171,7 +171,7 @@ var councilLayer = new ol.layer.Tile({
         type: 'cartodb',
         options: {
           cartocss_version: '2.1.1',
-          cartocss: '#layer{polygon-fill:#000;polygon-opacity:0.5;::outline{line-color:#FFFFFF;line-width:2;line-opacity:0.5;}}',
+          cartocss: '#layer{polygon-fill:#FFFFFF;polygon-opacity:0.0;::outline{line-color:#274b72;line-width:2;line-opacity:0.8;}}',
           sql: 'select * from council_boundaries'
         }
       }]
@@ -190,7 +190,7 @@ var zipcodeLayer = new ol.layer.Tile({
         type: 'cartodb',
         options: {
           cartocss_version: '2.1.1',
-          cartocss: '#layer{polygon-fill:#000;polygon-opacity:0.5;::outline{line-color:#FFFFFF;line-width:2;line-opacity:0.5;}}',
+          cartocss: '#layer{polygon-fill:#FFFFFF;polygon-opacity:0.0;::outline{line-color:#274b72;line-width:2;line-opacity:0.8;}}',
           sql: 'select * from zipcode_boundaries'
         }
       }]

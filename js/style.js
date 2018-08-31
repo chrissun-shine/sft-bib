@@ -33,7 +33,7 @@ function grantStyle(feature, resolution) {
   fill: new ol.style.Fill({color: color}),
   stroke: new ol.style.Stroke({
   width: 4,
-  color: 'red'
+  color: "red"
   })
   })
   });

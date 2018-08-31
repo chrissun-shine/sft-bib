@@ -30,9 +30,42 @@
   background-color:#274b72;
   color:#fff
 }
+.tabs .btns button.btn.active {
+	background-color: #274b72;
+	color: #fff
+}
 .tabs{
   background-color:#DAE1E6;
   border:1px solid #566A78
+}
+.tabs button.btn:focus {
+	box-shadow: inset 0 1px 1px 3px #566A78
+}
+
+.tab.active:focus {
+	box-shadow: inset 0 1px 1px 3px #566A78
+}
+
+.tabs button.btn.active:focus {
+	background-color: #566A78;
+	color: #000
+}
+
+.tabs button.btn.active:focus * {
+	background-color: #566A78;
+	color: #000
+}
+
+:focus {
+	outline: 0;
+	box-shadow: 0 1px 7px 3px #4789c6;
+	z-index: 100000
+}
+
+.focused {
+	outline: 0;
+	box-shadow: 0 1px 7px 3px #4789c6;
+	z-index: 100000
 }
 
 #filters label {
