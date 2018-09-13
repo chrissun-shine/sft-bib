@@ -163,83 +163,87 @@ var inundationLayer = new ol.layer.Tile({
 
 finderApp.map.addLayer(inundationLayer);
 
-var councilLayer = new ol.layer.Tile({
+var borderStyle = new ol.style.Style({
+  fill: new ol.style.Fill({color: 'rgba(255,255,255,0)'}),
+  stroke: new ol.style.Stroke({
+    color: '#274b72',
+    width: 2
+  })
+});
+
+var councilSql = 'select ST_AsText(the_geom_webmercator) as wkt_geom, coun_dist from council_boundaries';
+var councilLayer = new ol.layer.Vector({
   zIndex: 0,
   visible: false,
-  source: new ol.source.CartoDB({
-    account: 'nycomb-admin',
-    config: {
-      layers: [{
-        type: 'cartodb',
-        options: {
-          cartocss_version: '2.1.1',
-          cartocss: '#layer{polygon-fill:#FFFFFF;polygon-opacity:0.0;::outline{line-color:#274b72;line-width:2;line-opacity:1.0;}}',
-          sql: 'select * from council_boundaries'
-        }
-      }]
-    }
-  })
+  source: new ol.source.Vector({
+    url: 'https://nycomb-admin.carto.com/api/v2/sql?q=' + encodeURIComponent(councilSql),
+    format: new nyc.ol.format.CartoSql()
+  }),
+  style: borderStyle
 });
 finderApp.map.addLayer(councilLayer);
 
-var zipcodeLayer = new ol.layer.Tile({
+var zipcodeSql = 'select ST_AsText(the_geom_webmercator) as wkt_geom, postalcode from zipcode_boundaries';
+var zipcodeLayer = new ol.layer.Vector({
   zIndex: 0,
   visible: false,
-  source: new ol.source.CartoDB({
-    account: 'nycomb-admin',
-    config: {
-      layers: [{
-        type: 'cartodb',
-        options: {
-          cartocss_version: '2.1.1',
-          cartocss: '#layer{polygon-fill:#FFFFFF;polygon-opacity:0.0;::outline{line-color:#274b72;line-width:2;line-opacity:1.0;}}',
-          sql: 'select * from zipcode_boundaries'
-        }
-      }]
-    }
-  })
+  source: new ol.source.Vector({
+    url: 'https://nycomb-admin.carto.com/api/v2/sql?q=' + encodeURIComponent(zipcodeSql),
+    format: new nyc.ol.format.CartoSql()
+  }),
+  style: borderStyle
 });
 finderApp.map.addLayer(zipcodeLayer);
 
-var communityLayer = new ol.layer.Tile({
+var communitySql = 'select ST_AsText(the_geom_webmercator) as wkt_geom, boro_cd from comm_boundaries';
+var communityLayer = new ol.layer.Vector({
   zIndex: 0,
   visible: false,
-  source: new ol.source.CartoDB({
-    account: 'nycomb-admin',
-    config: {
-      layers: [{
-        type: 'cartodb',
-        options: {
-          cartocss_version: '2.1.1',
-          cartocss: '#layer{polygon-fill:#FFFFFF;polygon-opacity:0.0;::outline{line-color:#274b72;line-width:2;line-opacity:1.0;}}',
-          sql: 'select * from comm_boundaries'
-        }
-      }]
-    }
-  })
+  source: new ol.source.Vector({
+    url: 'https://nycomb-admin.carto.com/api/v2/sql?q=' + encodeURIComponent(communitySql),
+    format: new nyc.ol.format.CartoSql()
+  }),
+  style: borderStyle
 });
-
 finderApp.map.addLayer(communityLayer);
 
-var boroLayer = new ol.layer.Tile({
+var boroSql = 'select ST_AsText(the_geom_webmercator) as wkt_geom, boro_name from borough_boundaries';
+var boroLayer = new ol.layer.Vector({
   zIndex: 0,
   visible: false,
-  source: new ol.source.CartoDB({
-    account: 'nycomb-admin',
-    config: {
-      layers: [{
-        type: 'cartodb',
-        options: {
-          cartocss_version: '2.1.1',
-          cartocss: '#layer{polygon-fill:#FFFFFF;polygon-opacity:0.0;::outline{line-color:#274b72;line-width:2;line-opacity:1.0;}}',
-          sql: 'select * from borough_boundaries'
-        }
-      }]
-    }
-  })
+  source: new ol.source.Vector({
+    url: 'https://nycomb-admin.carto.com/api/v2/sql?q=' + encodeURIComponent(boroSql),
+    format: new nyc.ol.format.CartoSql()
+  }),
+  style: borderStyle
 });
 
 finderApp.map.addLayer(boroLayer);
+
+new nyc.ol.FeatureTip({
+  map: finderApp.map,
+  tips: [{
+    layer: councilLayer,
+    label: function(feature) {
+      return {html: feature.get('coun_dist'), css: 'council'};
+    }
+  }, {
+    layer: zipcodeLayer,
+    label: function(feature) {
+      return {html: feature.get('postalcode'), css: 'zipcode'};
+    }
+  }, {
+    layer: communityLayer,
+    label: function(feature) {
+      return {html: feature.get('boro_cd'), css: 'community'};
+    }
+  }, {
+    layer: boroLayer,
+    label: function(feature) {
+      return {html: feature.get('boro_name'), css: 'boro'};
+    }
+  }]
+});
 
 var extraLayers = {
   inundation: inundationLayer,
