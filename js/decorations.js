@@ -31,7 +31,8 @@ var decorations = {
       .append('<div><b>Grant: </b><span>' + this.get('grt') + '</span></div>')
       .append('<div><b>Project Type: </b><span>' + this.get('typ') + '</span></div>')
       .append(this.getDmg())
-      .append('<div><b>City Council District: </b><span>' + this.get('cd') + '</span></div>');
+      .append('<div><b>City Council District: </b><span>' + this.get('cd') + '</span></div>')
+      .append('<div><b>Community District: </b><span>' + this.get('cm') + '</span></div>');
   },
   html: function() {
     return $('<div></div>')
@@ -39,4 +40,4 @@ var decorations = {
       .append(this.detailsHtml())
       .append(this.mapButton());
   }
-};
+}; 

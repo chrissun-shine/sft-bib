@@ -9,7 +9,8 @@ var sql = 'SELECT ' +
   'agency as agy,' +
   'project_type as typ,' +
   'estimated_funded_damages as dmg,' +
-  'council_district as cd ' +
+  'council_district as cd, ' +
+  'community_district as cm ' +
   'FROM sft_nonbib_dataset';
 
 new nyc.ol.FinderApp({
@@ -225,22 +226,22 @@ new nyc.ol.FeatureTip({
   tips: [{
     layer: councilLayer,
     label: function(feature) {
-      return {html: feature.get('coun_dist'), css: 'council'};
+      return {html: 'City Council District: ' + feature.get('coun_dist'), css: 'council'};
     }
   }, {
     layer: zipcodeLayer,
     label: function(feature) {
-      return {html: feature.get('postalcode'), css: 'zipcode'};
+      return {html:'Zip Code: ' + feature.get('postalcode'), css: 'zipcode'};
     }
   }, {
     layer: communityLayer,
     label: function(feature) {
-      return {html: feature.get('boro_cd'), css: 'community'};
+      return {html:'Community District: ' + feature.get('boro_cd'), css: 'community'};
     }
   }, {
     layer: boroLayer,
     label: function(feature) {
-      return {html: feature.get('boro_name'), css: 'boro'};
+      return {html: 'Borough: ' + feature.get('boro_name'), css: 'boro'};
     }
   }]
 });
