@@ -188,3 +188,9 @@ div.cat label[for="chc-chc-7"]:before {
 .proj h3 {
   margin: 0;
 }
+.council {
+  background-color: #E8FACF;
+  border-radius:3px;
+  border:2px solid rgba(0,0,0,.5);
+  box-shadow:3px 3px 5px rgba(0,0,0,.1);
+}

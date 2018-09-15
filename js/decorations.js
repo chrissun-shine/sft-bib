@@ -19,7 +19,7 @@ var decorations = {
       minimumFractionDigits: 0
     });
     return $('<div class="proj"></div>')
-    .append('<div><b>Est. Funded Damages: </b><span>' + comdmg + '</span></div>');
+    .append('<div><b>Funded Amount: </b><span>' + comdmg + '</span></div>');
   },
 
   detailsHtml: function() {

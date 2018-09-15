@@ -172,7 +172,7 @@ var borderStyle = new ol.style.Style({
   })
 });
 
-var councilSql = 'select ST_AsText(the_geom_webmercator) as wkt_geom, coun_dist from council_boundaries';
+var councilSql = 'select ST_AsText(the_geom_webmercator) as wkt_geom, coun_dist, rep from council_boundaries';
 var councilLayer = new ol.layer.Vector({
   zIndex: 0,
   visible: false,
