@@ -226,7 +226,7 @@ new nyc.ol.FeatureTip({
   tips: [{
     layer: councilLayer,
     label: function(feature) {
-      return {html: 'City Council District: ' + feature.get('coun_dist'), css: 'council'};
+      return {html: 'City Council District: ' + feature.get('coun_dist') + '\n' + feature.get('rep'),  css: 'council'};
     }
   }, {
     layer: zipcodeLayer,

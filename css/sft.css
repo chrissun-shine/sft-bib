@@ -110,6 +110,7 @@ div.cat label[for="chc-chc-7"]:before {
 .pop, .f-tip {
   background-color:#D8EDFC;
   border-radius:3px;
+  object-position: 20px;
   border:2px solid rgba(0,0,0,.5);
   box-shadow:3px 3px 5px rgba(0,0,0,.1);
 }
@@ -191,6 +192,7 @@ div.cat label[for="chc-chc-7"]:before {
 .council {
   background-color: #E8FACF;
   border-radius:3px;
+  left: 20px;
   border:2px solid rgba(0,0,0,.5);
   box-shadow:3px 3px 5px rgba(0,0,0,.1);
 }
