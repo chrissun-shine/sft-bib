@@ -88,6 +88,16 @@ new nyc.ol.FinderApp({
   decorations: [decorations]
 });
 
+$('.nav').insertAfter('#banner');
+$('.nav .burg').click(function() {
+  $('.nav .lnks').slideToggle();
+});
+$(window).resize(function() {
+  if ($(window).width() > 510) {
+    $('.nav .lnks').show();
+  }
+});
+
 var highlitedGrantSource = new ol.source.Vector();
 finderApp.map.addLayer(new ol.layer.Vector({
   source: highlitedGrantSource,
@@ -226,7 +236,7 @@ new nyc.ol.FeatureTip({
   tips: [{
     layer: councilLayer,
     label: function(feature) {
-      return {html: 'City Council District: ' + feature.get('coun_dist') + '\n' + feature.get('rep'),  css: 'council'};
+      return {html: 'City Council District: ' + feature.get('coun_dist') + '<br>' + feature.get('rep'),  css: 'council'};
     }
   }, {
     layer: zipcodeLayer,
