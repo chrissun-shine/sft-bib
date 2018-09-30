@@ -196,6 +196,15 @@ div.cat label[for="chc-chc-7"]:before {
   border:2px solid rgba(0,0,0,.5);
   box-shadow:3px 3px 5px rgba(0,0,0,.1);
 }
+
+div.foot {
+  position: fixed;
+  bottom: 11px;
+  left: 5px;
+  background-color: #00000000;
+  z-index: 1;
+}
+
 div.nav {
   position: fixed;
   top: 11px;
@@ -205,7 +214,7 @@ div.nav {
 }
 div.nav .lnks a {
   color: #fff;
-  padding: 3px;
+  padding: 10px;
 }
 div.nav .burg {
   display: none;
