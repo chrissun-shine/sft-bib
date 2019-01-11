@@ -45,43 +45,43 @@ new nyc.ol.FinderApp({
   } , {
     title: 'Managing Agency',
     choices: [
-      {name: 'agy', values: ["Administration for Children's Services"], label: "Administration for Children's Services", checked: true},
-      {name: 'agy', values: ['Board of Elections'], label: "Board of Elections", checked: true},  
-      {name: 'agy', values: ['Campaign Finance Board'], label: "Campaign Finance Board", checked: true},  
-      {name: 'agy', values: ['City Council'], label: "City Council", checked: true,},
-      {name: 'agy', values: ['City University of New York'], label: "City University of New York", checked: true},    
-      {name: 'agy', values: ['Civilian Complaint Review Board'], label: "Civilian Complaint Review Board", checked: true},  
-      {name: 'agy', values: ['Department of Citywide Administrative Services'], label: "Department of Citywide Administrative Services", checked: true},  
-      {name: 'agy', values: ['Department of Correction'], label: "Department of Correction", checked: true},
-      {name: 'agy', values: ['Department of Cultural Affairs'], label: "Department of Cultural Affairs", checked: true},
-      {name: 'agy', values: ['Department of Design and Construction'], label: "Department of Design and Construction", checked: true},
-      {name: 'agy', values: ['Department of Education'], label: "Department of Education", checked: true},
-      {name: 'agy', values: ['Department of Environmental Protection'], label: 'Department of Environmental Protection', checked: true},
-      {name: 'agy', values: ['Department of Finance'], label: 'Department of Finance', checked: true},
-      {name: 'agy', values: ['Department of Health and Mental Hygiene'], label: 'Department of Health and Mental Hygiene', checked: true},
-      {name: 'agy', values: ['Department of Homeless Services'], label: 'Department of Homeless Services', checked: true},
-      {name: 'agy', values: ['Department of Information Technology and Telecommunications'], label: 'Department of Information Technology and Telecommunications', checked: true},
-      {name: 'agy', values: ['Department of Investigation'], label: 'Department of Investigation', checked: true},
-      {name: 'agy', values: ['Department of Parks and Recreation'], label: 'Department of Parks and Recreation', checked: true},
-      {name: 'agy', values: ['Department of Probation'], label: 'Department of Probation', checked: true},
-      {name: 'agy', values: ['Department of Records and Information Services'], label: 'Department of Records and Information Services', checked: true},
-      {name: 'agy', values: ['Department of Sanitation'], label: 'Department of Sanitation', checked: true},
-      {name: 'agy', values: ['Department of Social Services (Human Resources Administration)'], label: 'Department of Social Services', checked: true},  
-      {name: 'agy', values: ['Department of Transportation'], label: 'Department of Transportation', checked: true},  
-      {name: 'agy', values: ['Department of Youth and Community Development'], label: 'Department of Youth and Community Development', checked: true},  
-      {name: 'agy', values: ['District Attorney - New York County'], label: 'District Attorney - New York County', checked: true}, 
-      {name: 'agy', values: ['Economic Development Corporation'], label: 'Economic Development Corporation', checked: true}, 
-      {name: 'agy', values: ['Financial Information Services Agency'], label: 'Financial Information Services Agency', checked: true}, 
-      {name: 'agy', values: ['Fire Department'], label: 'Fire Department', checked: true}, 
-      {name: 'agy', values: ['Health and Hospitals Corporation'], label: 'Health and Hospitals Corporation', checked: true}, 
-      {name: 'agy', values: ['Housing Preservation and Development'], label: 'Housing Preservation and Development', checked: true},
-      {name: 'agy', values: ['Law Department'], label: 'Law Department', checked: true}, 
-      {name: 'agy', values: ['New York City Housing Authority'], label: 'New York City Housing Authority', checked: true},
-      {name: 'agy', values: ['New York Public Library'], label: 'New York Public Library', checked: true}, 
-      {name: 'agy', values: ['Office of Administrative Trials and Hearings'], label: 'Office of Administrative Trials and Hearings', checked: true}, 
-      {name: 'agy', values: ['Office of the Mayor'], label: 'Office of the Mayor', checked: true}, 
-      {name: 'agy', values: ['Police Department'], label: 'Police Department', checked: true}, 
-      {name: 'agy', values: ['Queens Borough Public Library'], label: 'Queens Borough Public Library', checked: true}
+      {name: 'agy', values: ["Administration for Children's Services"], label: "Administration for Children's Services",},
+      {name: 'agy', values: ['Board of Elections'], label: "Board of Elections",},  
+      {name: 'agy', values: ['Campaign Finance Board'], label: "Campaign Finance Board",},  
+      {name: 'agy', values: ['City Council'], label: "City Council",},
+      {name: 'agy', values: ['City University of New York'], label: "City University of New York",},    
+      {name: 'agy', values: ['Civilian Complaint Review Board'], label: "Civilian Complaint Review Board", },  
+      {name: 'agy', values: ['Department of Citywide Administrative Services'], label: "Department of Citywide Administrative Services",},  
+      {name: 'agy', values: ['Department of Correction'], label: "Department of Correction",},
+      {name: 'agy', values: ['Department of Cultural Affairs'], label: "Department of Cultural Affairs",},
+      {name: 'agy', values: ['Department of Design and Construction'], label: "Department of Design and Construction",},
+      {name: 'agy', values: ['Department of Education'], label: "Department of Education",},
+      {name: 'agy', values: ['Department of Environmental Protection'], label: 'Department of Environmental Protection',},
+      {name: 'agy', values: ['Department of Finance'], label: 'Department of Finance',},
+      {name: 'agy', values: ['Department of Health and Mental Hygiene'], label: 'Department of Health and Mental Hygiene',},
+      {name: 'agy', values: ['Department of Homeless Services'], label: 'Department of Homeless Services',},
+      {name: 'agy', values: ['Department of Information Technology and Telecommunications'], label: 'Department of Information Technology and Telecommunications',},
+      {name: 'agy', values: ['Department of Investigation'], label: 'Department of Investigation',},
+      {name: 'agy', values: ['Department of Parks and Recreation'], label: 'Department of Parks and Recreation',},
+      {name: 'agy', values: ['Department of Probation'], label: 'Department of Probation',},
+      {name: 'agy', values: ['Department of Records and Information Services'], label: 'Department of Records and Information Services',},
+      {name: 'agy', values: ['Department of Sanitation'], label: 'Department of Sanitation',},
+      {name: 'agy', values: ['Department of Social Services (Human Resources Administration)'], label: 'Department of Social Services',},  
+      {name: 'agy', values: ['Department of Transportation'], label: 'Department of Transportation',},  
+      {name: 'agy', values: ['Department of Youth and Community Development'], label: 'Department of Youth and Community Development',},  
+      {name: 'agy', values: ['District Attorney - New York County'], label: 'District Attorney - New York County',}, 
+      {name: 'agy', values: ['Economic Development Corporation'], label: 'Economic Development Corporation',}, 
+      {name: 'agy', values: ['Financial Information Services Agency'], label: 'Financial Information Services Agency',}, 
+      {name: 'agy', values: ['Fire Department'], label: 'Fire Department',}, 
+      {name: 'agy', values: ['Health and Hospitals Corporation'], label: 'Health and Hospitals Corporation',}, 
+      {name: 'agy', values: ['Housing Preservation and Development'], label: 'Housing Preservation and Development',},
+      {name: 'agy', values: ['Law Department'], label: 'Law Department',}, 
+      {name: 'agy', values: ['New York City Housing Authority'], label: 'New York City Housing Authority', },
+      {name: 'agy', values: ['New York Public Library'], label: 'New York Public Library',}, 
+      {name: 'agy', values: ['Office of Administrative Trials and Hearings'], label: 'Office of Administrative Trials and Hearings',}, 
+      {name: 'agy', values: ['Office of the Mayor'], label: 'Office of the Mayor', }, 
+      {name: 'agy', values: ['Police Department'], label: 'Police Department',}, 
+      {name: 'agy', values: ['Queens Borough Public Library'], label: 'Queens Borough Public Library',}
     ]
   }],
   facilitySearch: {nameField: '[project_facility_name]'},
@@ -126,10 +126,6 @@ $(document).ready(function() {
     choices: [
       {name: 'layer', label: 'None', value: 'none', checked: true},
       {name: 'layer', label: 'Sandy Inundation Zone', value: 'inundation'},
-      {name: 'layer', label: 'City Council District', value: 'council'},
-      {name: 'layer', label: 'Community District', value: 'community'},
-      {name: 'layer', label: 'Borough', value: 'boro'},      
-      {name: 'layer', label: 'Zip Code', value: 'zipcode'},
     ],
     radio: true
   });
@@ -152,7 +148,39 @@ $(document).ready(function() {
   });
 });
 
-finderApp.layer.setZIndex(1000)
+var layerChoices2 = new nyc.Choice({
+  target: $('<div></div>'),
+  choices: [
+    {name: 'layer', label: 'None', value: 'none', checked: true},
+    {name: 'layer', label: 'City Council District', value: 'council'},
+    {name: 'layer', label: 'Community District', value: 'community'},
+    {name: 'layer', label: 'Borough', value: 'boro'},      
+    {name: 'layer', label: 'Zip Code', value: 'zipcode'},
+    {name: 'layer', label: 'NYS Senate District', value: 'senate'},
+    {name: 'layer', label: 'NYS Assembly District', value: 'assembly'},
+  ],
+  radio: true
+});
+
+var layerCollapsible = new nyc.Collapsible({
+  target: $('<div></div>'),
+  title: 'Political and Geographic Boundaries',
+  content: layerChoices2.getContainer(),
+  collapsed: true
+});
+
+$('#filters').append(layerCollapsible.getContainer());
+
+layerChoices2.on('change', function() {
+  for (var layer in extraLayers) {
+    extraLayers[layer].setVisible(false);
+  }
+  var chosen = layerChoices2.val()[0].value
+  extraLayers[chosen].setVisible(true);
+});
+
+
+finderApp.layer.setZIndex(3000)
 
 var inundationLayer = new ol.layer.Tile({
   zIndex: 0,
@@ -231,6 +259,32 @@ var boroLayer = new ol.layer.Vector({
 
 finderApp.map.addLayer(boroLayer);
 
+var senateSql = 'select ST_AsText(the_geom_webmercator) as wkt_geom, sen_dis from senate_boundaries';
+var senateLayer = new ol.layer.Vector({
+  zIndex: 0,
+  visible: false,
+  source: new ol.source.Vector({
+    url: 'https://nycomb-admin.carto.com/api/v2/sql?q=' + encodeURIComponent(senateSql),
+    format: new nyc.ol.format.CartoSql()
+  }),
+  style: borderStyle
+});
+
+finderApp.map.addLayer(senateLayer);
+
+var assemblySql = 'select ST_AsText(the_geom_webmercator) as wkt_geom, assem_dist from assembly_boundaries';
+var assemblyLayer = new ol.layer.Vector({
+  zIndex: 0,
+  visible: false,
+  source: new ol.source.Vector({
+    url: 'https://nycomb-admin.carto.com/api/v2/sql?q=' + encodeURIComponent(assemblySql),
+    format: new nyc.ol.format.CartoSql()
+  }),
+  style: borderStyle
+});
+
+finderApp.map.addLayer(assemblyLayer);
+
 new nyc.ol.FeatureTip({
   map: finderApp.map,
   tips: [{
@@ -253,13 +307,25 @@ new nyc.ol.FeatureTip({
     label: function(feature) {
       return {html: 'Borough: ' + feature.get('boro_name'), css: 'boro'};
     }
+  }, {
+    layer: senateLayer,
+    label: function(feature) {
+      return {html: 'NYS Senate District: ' + feature.get('sen_dis'), css: 'boro'};
+    }
+  }, {
+    layer: assemblyLayer,
+    label: function(feature) {
+      return {html: 'NYS Assembly District: ' + feature.get('assem_dist'), css: 'boro'};
+    }
   }]
 });
 
 var extraLayers = {
-  inundation: inundationLayer,
   council: councilLayer,
   zipcode: zipcodeLayer,
   community: communityLayer,
-  boro: boroLayer
+  boro: boroLayer,
+  senate: senateLayer,
+  assembly: assemblyLayer,
+  inundation: inundationLayer,
 };
