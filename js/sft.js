@@ -9,6 +9,7 @@ var sql = 'SELECT ' +
   'agency as agy,' +
   'project_type as typ,' +
   'estimated_funded_damages as dmg,' +
+  'dedicated_resiliency_funding as res,' +
   'council_district as cd, ' +
   'community_district as cm ' +
   'FROM sft_nonbib_dataset';

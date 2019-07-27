@@ -18,13 +18,20 @@ var decorations = {
       maximumFractionDigits: 0,
       minimumFractionDigits: 0
     });
+    var res = new Number(this.get('res'));
+    comres = res.toLocaleString('en-US', {
+      currency: 'USD',
+      style: 'currency',
+      maximumFractionDigits: 0,
+      minimumFractionDigits: 0
+    });
     return $('<div class="proj"></div>')
-    .append('<div><b>Funded Amount: </b><span>' + comdmg + '</span></div>');
+    .append('<div><b>Repair/Replacement Funding: </b><span>' + comdmg + '</span></div>')
+    .append('<div><b>Resiliency Funding: </b><span>' + comres + '</span></div>');
   },
 
   detailsHtml: function() {
     return $('<div class="proj"></div>')
-      .append('<div><b>ID: </b><span>' + this.get('id') + '</span></div>')
       .append('<div><b>Address: </b><span>' + this.get('addr') + '</span></div>')
       .append('<div><b>Agency: </b><span>' + this.get('agy') + '</span></div>')
       .append('<div><b>Funding Source: </b><span>' + this.get('fnd') + '</span></div>')
